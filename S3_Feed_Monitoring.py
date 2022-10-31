@@ -12,40 +12,16 @@ ENV = os.environ["ENV"]
 SNS_TOPIC_ARN = os.environ["SNS_TOPIC_ARN"]
 
 # what is the prefix for the jobs that are expected to have their most recent files provided yesterday
-day_lag_jobs = ['CSAT-csv/processed/']
+day_lag_jobs = ['day_lag_test/processed/']
 
 # what is the prefix for the jobs that are expected to have their most recent files provided on the last work day
-business_day_jobs = ['FundPrices/processed/']
+business_day_jobs = ['business_day_test/processed/']
 
 # what is the prefix for the jobs that are expected to have their most recent files provided on the every 15 minutes
-every_15_minutes = ['conversationlog/']
+every_15_minutes = ['test_15_minute/']
 
 # test today and last workday paths
-paths = ["s3.console.aws.amazon.com/s3/buckets/sandbox-raw-alightanalytics?region=us-east-1&prefix=participant_satisfaction_survey/processed/&showversions=false",
-"s3.console.aws.amazon.com/s3/buckets/sandbox-raw-alightanalytics?region=us-east-1&prefix=participant_satisfaction_survey/interim/&showversions=false"]
-
-# paste any new htmls in the path variable below
-# paths = ["s3.console.aws.amazon.com/s3/buckets/prod-raw-salesforce?prefix=CSAT-csv/processed/&region=us-east-1"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-alightanalytics?region=us-east-1&prefix=participant_satisfaction_survey/interim/&showversions=false"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-alightanalytics?region=us-east-1&prefix=AgentPortal/processed/&showversions=false"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-provisioned?region=us-east-1&prefix=alight_5001_5555_reponse/processed-by-script/&showversions=false"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-ava?prefix=conversationlog/&region=us-east-1"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-tba?prefix=FundPrices/processed/&region=us-east-1"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-tba?region=us-east-1&prefix=BusinessProcessEvents/report_interim/&showversions=false"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-tba?prefix=DataChangeEvents/report_interim/&region=us-east-1"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-tba?region=us-east-1&prefix=UDPDataChangeEvents/report_interim/&showversions=false"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-upoint?region=us-east-1&prefix=BusinessEvent/interim/&showversions=false"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-upoint?region=us-east-1&prefix=UxPageUsage/interim/&showversions=false"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-salesforce?prefix=Account/&region=us-east-1"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-salesforce?prefix=Case/&region=us-east-1"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-salesforce?prefix=CX_Address__c/interim/&region=us-east-1"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-salesforce?prefix=CX_Email__c/interim/&region=us-east-1"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-salesforce?prefix=CX_OnlineSetupSubmission__c/interim/&region=us-east-1"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-salesforce?prefix=CX_Phone__c/interim/&region=us-east-1"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-salesforce?region=us-east-1&prefix=CX_Transaction__c/interim/&showversions=false"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-niceincontact?region=us-east-1&prefix=cdr/interim/&showversions=false"
-# ,"https://us-east-1.console.aws.amazon.com/s3/buckets/prod-raw-okta?prefix=converge_logs/interim/year%3D2022/&region=us-east-1"
-# ,"https://s3.console.aws.amazon.com/s3/buckets/prod-raw-okta?prefix=myplan_logs/processed/&region=us-east-1"]
+paths = ["s3.console.aws.amazon.com/s3/buckets/sandbox-raw-test?region=us-east-1&prefix=day_test/processed/&showversions=false"]
 
 def utc_now() -> datetime:
     return datetime.utcnow().replace(tzinfo=timezone.utc)
